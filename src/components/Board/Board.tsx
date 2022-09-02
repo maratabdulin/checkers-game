@@ -14,7 +14,7 @@ export const Board = ({ board, onSetBoard }: BoardPropsType): ReactElement => {
             {board.cells.map((row, index) => (
                 <Fragment key={index}>
                     {row.map((cell, index) => (
-                        <Cell label={cell.labels} key={cell.key} />
+                        <Cell cell={cell} key={cell.key} />
                     ))}
                 </Fragment>
             ))}

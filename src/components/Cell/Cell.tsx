@@ -1,12 +1,17 @@
 import React, { ReactElement } from 'react';
 import './Cell.css';
-import { Labels } from '../../models/Labels';
 import { mergeClasses } from '../../utils/utils';
+import CellModel from '../../models/CellModel';
 
 type CellPropsType = {
-    label: Labels;
+    cell: CellModel;
 };
 
-export const Cell = ({ label }: CellPropsType): ReactElement => {
-    return <div className={mergeClasses('cell', label)}></div>;
+export const Cell = ({ cell }: CellPropsType): ReactElement => {
+    const { figure, labels } = cell;
+    return (
+        <div className={mergeClasses('cell', labels)}>
+            {figure?.imgSrc && <img className="icon" src={figure.imgSrc} alt={figure.name} />}
+        </div>
+    );
 };

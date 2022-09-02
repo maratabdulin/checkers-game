@@ -22,5 +22,11 @@
   },
   "include": [
     "src"
-  ]
+  ],
+  "paths": {
+    "components/*": ["./components/*"],
+    "models/*": ["./models/*"],
+    "utils/*": ["./utils/*"],
+    "images/*": ["./images/*"]
+  }
 }
